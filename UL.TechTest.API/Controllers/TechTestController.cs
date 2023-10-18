@@ -21,6 +21,7 @@ namespace UL.TechTest.API.Controllers
         [Route("Factorial/{value:int:min(1):max(10000)}")]
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetFactorial(int value)
         {
             try
@@ -46,6 +47,7 @@ namespace UL.TechTest.API.Controllers
         [Route("FizzBuzz")]
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetFizzBuzz()
         {
             try
